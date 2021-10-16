@@ -1,0 +1,88 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <!-- select username/email -->
+    <label for="selectId">Select Username/Email</label>
+    <select
+      id="selectId"
+      class="form-control"
+      [(ngModel)]="loginType"
+      formControlName="selectId"
+    >
+      <option value="username">Username</option>
+      <option value="email">Email</option>
+    </select>
+  </div>
+  <!-- select username/email -->
+
+  <!-- Username -->
+  <div class="form-group" *ngIf="loginType === 'username'">
+    <label>UserName</label>
+    <input
+      type="text"
+      id="username"
+      class="form-control"
+      autocomplete="username"
+      placeholder="Enter your username"
+      formControlName="username"
+      [ngClass]="{ 'is-invalid':  (f.username.touched || submitted) && f.username.errors}"
+    />
+    <div *ngIf="(f.username.touched || submitted) && f.username.errors" class="invalid-feedback">
+      <div *ngIf="f.username.errors.required">Username is required</div>
+      <div *ngIf="f.username.errors.pattern">Username only contains alphanumeric and username should not start with a number</div>
+    </div>
+  </div>
+  <!-- Username -->
+
+  <!-- Email -->
+  <div class="form-group" *ngIf="loginType === 'email'">
+    <label for="email">Email</label>
+    <input
+      type="text"
+      id="email"
+      class="form-control"
+      placeholder="Enter your email"
+      formControlName="email"
+      [ngClass]="{ 'is-invalid':  (f.email.touched || submitted) && (f.email.errors) }"
+    />
+    <div *ngIf="(f.email.touched || submitted) && (f.email.errors)" class="invalid-feedback">
+      <div *ngIf="f.email.errors.required">Email is required</div>
+      <div *ngIf="f.email.errors.pattern">Email don't start with any special character and also end with @prominentpixel.com</div>
+    </div>
+  </div>
+  <!-- Email -->
+
+  <!-- Password -->
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input
+      type="password"
+      id="password"
+      class="form-control"
+      name="password"
+      autocomplete="new-password"
+      placeholder="Enter your password"
+      formControlName="password"
+      [ngClass]="{
+        'is-invalid': (f.password.touched || submitted) && f.password.errors
+      }"
+    />
+    <div
+      *ngIf="(f.password.touched || submitted) && f.password.errors"
+      class="invalid-feedback"
+    >
+      <div *ngIf="f.password.errors.required">Password is required</div>
+      <div *ngIf="f.password.errors.pattern">
+        Password must have capital letter, small letter and special character
+        and also a number
+      </div>
+    </div>
+  </div>
+  <!-- password -->
+
+  <div class="form-group">
+    <button class="btn btn-success mr-2" type="submit">Login</button>
+    <a style="cursor: pointer" [routerLink]="['/signup']"
+      >Not have any account?</a
+    >
+  </div>
+</form>

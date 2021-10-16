@@ -1,0 +1,93 @@
+<h4>Add New Blog</h4>
+<hr />
+<form #blogForm="ngForm" (ngSubmit)="onSubmit(blogForm)">
+  <!-- Title -->
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input
+      type="text"
+      id="title"
+      class="form-control"
+      name="title"
+      [(ngModel)]="title"
+      required
+    />
+  </div>
+  <!-- Title -->
+
+
+  <div class="row">
+    <div class="col-md-6">
+      <!-- Description -->
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea
+          type="text"
+          id="description"
+          class="form-control"
+          name="description"
+          [(ngModel)]="description"
+          required
+        ></textarea>
+      </div>
+      <!-- Description -->
+
+      <!-- Image URL -->
+      <div class="form-group">
+        <label for="imageUrl">Image URL</label>
+        <input
+          type="text"
+          id="imageUrl"
+          class="form-control"
+          name="imageUrl"
+          [(ngModel)]="imageUrl"
+          required
+        />
+      </div>
+      <!-- Image URL -->
+
+      <!-- Tags -->
+      <div class="form-group">
+        <label>Tags</label>
+        <ng-multiselect-dropdown
+          [placeholder]="'custom placeholder'"
+          [settings]="dropdownSettings"
+          [data]="dropdownList"
+          [name]="'tags'"
+          [(ngModel)]="selectedTags"
+          ngModel
+          required
+        >
+        </ng-multiselect-dropdown>
+      </div>
+      <!-- Tags -->
+
+      <!-- Author -->
+      <div class="form-group">
+        <label for="author">Author</label>
+        <input
+          type="text"
+          id="author"
+          class="form-control"
+          name="author"
+          [ngModel]="author"
+          readonly
+        />
+      </div>
+      <!-- Author -->
+
+    </div>
+    <div class="col-md-6">
+      <img [src]="imageUrl" alt="" style="width: 500px;">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <button class="btn btn-success" type="submit" *ngIf="!blog" [disabled]="!blogForm.valid">
+      Publish
+    </button>
+    <button class="btn btn-success" type="submit" *ngIf="blog" [disabled]="!blogForm.valid">
+      Update
+    </button>
+  </div>
+</form>

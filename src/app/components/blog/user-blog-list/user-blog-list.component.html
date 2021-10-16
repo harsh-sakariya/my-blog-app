@@ -1,0 +1,13 @@
+<div class="row" *ngIf="userBlogs">
+  <div class="col-md-4" *ngFor="let userBlog of userBlogs">
+    <div class="card" style="width: 18rem;" (click)="onViewDetails(userBlog.id)" >
+      <img class="card-img-top" [src]="userBlog.imageUrl" [alt]="userBlog.title">
+      <div class="card-body">
+        <h5 class="card-title">{{userBlog.title | stringShorter:30 }}</h5>
+        <p class="card-text">{{userBlog.description | stringShorter:100}}</p>
+        <button class="btn btn-primary" (click)="onEdit(userBlog.id)">Edit</button>
+        <button class="btn btn-danger mx-2" (click)="onDelete(userBlog.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

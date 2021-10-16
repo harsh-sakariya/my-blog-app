@@ -1,0 +1,13 @@
+<div class="jumbotron">
+  <small style="float: right;">Publish Date - {{blog.date | amLocal | amDateFormat: 'YYYY-MM-DD HH:mm'}} - {{blog.date |  amTimeAgo:true}} ago</small>
+  <h2>{{blog.title}}</h2>
+  <div class="text-center my-2">
+    <img [src]="blog.imageUrl" class="rounded img-fluid" [alt]="blog.title" style="max-width: 448px;">
+  </div>
+  <p class="lead">{{blog.description}}</p>
+  <hr class="my-4">
+  <p>{{this.blog.tags | tagConverter}}</p>
+  <p>-{{this.blog.author}}</p>
+  <button class="btn btn-primary mb-4" (click)="onPrevious()" style="float: left;">Previous</button>
+  <button class="btn btn-primary mb-4" (click)="onNext()" style="float: right;">Next</button>
+</div>

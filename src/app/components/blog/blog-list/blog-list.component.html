@@ -1,0 +1,17 @@
+<button class="btn btn-primary" [routerLink]="['new']">
+  write something to make better world
+</button>
+<div class="list-group mt-4">
+  <a
+    *ngFor="let blog of blogs.reverse(); let i=index;"
+    style="cursor: pointer"
+    class="list-group-item list-group-item-action flex-column align-items-start"
+    (click)="onShowDetails(blogs.length-i-1)"
+  >
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">{{blog.title}}</h5>
+    </div>
+    <p class="mb-1">{{blog.tags | tagConverter}}</p>
+    <small>-{{blog.author}}</small>
+  </a>
+</div>
