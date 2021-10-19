@@ -4,7 +4,7 @@
   <div class="text-center my-2">
     <img [src]="blog.imageUrl" class="rounded img-fluid" [alt]="blog.title" style="max-width: 500px; max-height: 400px;">
   </div>
-  <p class="lead">{{blog.description}}</p>
+  <div class="lead" [innerHTML]="blog.description"></div>
   <hr class="my-4">
   <p>{{this.blog.tags | tagConverter}}</p>
   <p>-{{this.blog.author}}</p>

@@ -40,6 +40,87 @@ export class BlogService {
       [{ tag_id: 3, tag_text: 'javascript' }, { tag_id: 4, tag_text: 'typescript' }, { tag_id: 5, tag_text: 'version8' }],
       new Date(2021, 9, 14, 12, 15, 54, 0)
     ),
+    new Blog(
+      4,
+      'Where can I get some?',
+      'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which dont look even slightly believable. ',
+      'https://cdn.pixabay.com/photo/2020/11/02/13/24/autumn-colours-5706651_960_720.jpg',
+      'author2',
+      [{ tag_id: 3, tag_text: 'javascript' }, { tag_id: 4, tag_text: 'typescript' }, { tag_id: 5, tag_text: 'version8' }],
+      new Date(2021, 9, 14, 12, 15, 54, 0)
+    ),
+    new Blog(
+      5,
+      'Where can I get some?',
+      'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which dont look even slightly believable. ',
+      'https://cdn.pixabay.com/photo/2020/11/02/13/24/autumn-colours-5706651_960_720.jpg',
+      'author2',
+      [{ tag_id: 3, tag_text: 'javascript' }, { tag_id: 4, tag_text: 'typescript' }, { tag_id: 5, tag_text: 'version8' }],
+      new Date(2021, 9, 14, 12, 15, 54, 0)
+    ),
+    new Blog(
+      6,
+      'Where can I get some?',
+      'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which dont look even slightly believable. ',
+      'https://cdn.pixabay.com/photo/2020/11/02/13/24/autumn-colours-5706651_960_720.jpg',
+      'author2',
+      [{ tag_id: 3, tag_text: 'javascript' }, { tag_id: 4, tag_text: 'typescript' }, { tag_id: 5, tag_text: 'version8' }],
+      new Date(2021, 9, 14, 12, 15, 54, 0)
+    ),
+    new Blog(
+      7,
+      'Where can I get some?',
+      'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which dont look even slightly believable. ',
+      'https://cdn.pixabay.com/photo/2020/11/02/13/24/autumn-colours-5706651_960_720.jpg',
+      'author2',
+      [{ tag_id: 3, tag_text: 'javascript' }, { tag_id: 4, tag_text: 'typescript' }, { tag_id: 5, tag_text: 'version8' }],
+      new Date(2021, 9, 14, 12, 15, 54, 0)
+    ),
+    new Blog(
+      8,
+      'Where can I get some?',
+      'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which dont look even slightly believable. ',
+      'https://cdn.pixabay.com/photo/2020/11/02/13/24/autumn-colours-5706651_960_720.jpg',
+      'author2',
+      [{ tag_id: 3, tag_text: 'javascript' }, { tag_id: 4, tag_text: 'typescript' }, { tag_id: 5, tag_text: 'version8' }],
+      new Date(2021, 9, 14, 12, 15, 54, 0)
+    ),
+    new Blog(
+      9,
+      'Where can I get some?',
+      'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which dont look even slightly believable. ',
+      'https://cdn.pixabay.com/photo/2020/11/02/13/24/autumn-colours-5706651_960_720.jpg',
+      'author2',
+      [{ tag_id: 3, tag_text: 'javascript' }, { tag_id: 4, tag_text: 'typescript' }, { tag_id: 5, tag_text: 'version8' }],
+      new Date(2021, 9, 14, 12, 15, 54, 0)
+    ),
+    new Blog(
+      10,
+      'Where can I get some?',
+      'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which dont look even slightly believable. ',
+      'https://cdn.pixabay.com/photo/2020/11/02/13/24/autumn-colours-5706651_960_720.jpg',
+      'author2',
+      [{ tag_id: 3, tag_text: 'javascript' }, { tag_id: 4, tag_text: 'typescript' }, { tag_id: 5, tag_text: 'version8' }],
+      new Date(2021, 9, 14, 12, 15, 54, 0)
+    ),
+    new Blog(
+      11,
+      'Where can I get some?',
+      'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which dont look even slightly believable. ',
+      'https://cdn.pixabay.com/photo/2020/11/02/13/24/autumn-colours-5706651_960_720.jpg',
+      'author2',
+      [{ tag_id: 3, tag_text: 'javascript' }, { tag_id: 4, tag_text: 'typescript' }, { tag_id: 5, tag_text: 'version8' }],
+      new Date(2021, 9, 14, 12, 15, 54, 0)
+    ),
+    new Blog(
+      12,
+      'Where can I get some?',
+      'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which dont look even slightly believable. ',
+      'https://cdn.pixabay.com/photo/2020/11/02/13/24/autumn-colours-5706651_960_720.jpg',
+      'author2',
+      [{ tag_id: 3, tag_text: 'javascript' }, { tag_id: 4, tag_text: 'typescript' }, { tag_id: 5, tag_text: 'version8' }],
+      new Date(2021, 9, 14, 12, 15, 54, 0)
+    ),
   ];
 
   getNextIdOfBlog(){

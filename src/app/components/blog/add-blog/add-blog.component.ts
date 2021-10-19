@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 import { IDropdownSettings } from 'ng-multiselect-dropdown';
 
@@ -23,10 +24,12 @@ export class AddBlogComponent implements OnInit, OnDestroy {
   blog: Blog;
   id: number;
   title: string;
-  description: string;
+  description: string = '';
   imageUrl: string;
   author: string;
   date: Date;
+
+  public Editor = ClassicEditor;
 
   constructor(private blogService: BlogService, private router: Router, private route: ActivatedRoute, private authService: AuthService) { }
 

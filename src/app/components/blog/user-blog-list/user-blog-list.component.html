@@ -1,5 +1,5 @@
 
-<table datatable class="row-border hover">
+<table datatable class="row-border hover table-responsive-md">
   <thead>
     <tr>
       <th>ID</th>
@@ -12,9 +12,15 @@
   <tbody *ngIf="userBlogs?.length != 0">
     <tr style="cursor: pointer;" *ngFor="let userBlog of userBlogs; let i=index" (click)="onViewDetails(userBlog.id)">
       <td>{{i+1}}</td>
-      <td><img class="card-img-top" style="width: 40px;" [src]="userBlog.imageUrl" [alt]="userBlog.title"></td>
+      <td><img class="card-img-top" style="width: 60px;" [src]="userBlog.imageUrl" [alt]="userBlog.title"></td>
       <td>{{userBlog.title | stringShorter:15 }}</td>
-      <td>{{userBlog.description | stringShorter:100}}</td>
+      <!-- <td>{{userBlog.description | stringShorter:100}}</td> -->
+      <td>
+        <p 
+          [innerHTML]="userBlog.description" 
+          style="max-width: 386px; max-height: 80px; overflow: auto; margin-bottom: 0;">
+        </p>
+      </td>
       <td>
         <button class="btn btn-primary" (click)="onEdit(userBlog.id)">Edit</button>
         <button class="btn btn-danger mx-2" (click)="onDelete(userBlog.id)">Delete</button>

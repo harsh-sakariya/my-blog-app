@@ -1,15 +1,22 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { MomentModule } from 'ngx-moment';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { DataTablesModule } from 'angular-datatables';
 
-// import ngx-translate and the http loader
+//for ngx-translate
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
 
+//modules
 import { AppRoutingModule } from './app-routing.module';
+
+//components
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -19,11 +26,12 @@ import { BlogListComponent } from './components/blog/blog-list/blog-list.compone
 import { AddBlogComponent } from './components/blog/add-blog/add-blog.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignUpComponent } from './components/signup/signup.component';
-import { TagConverterPipe } from './pipes/tag-converter.pipe';
 import { UserBlogList } from './components/blog/user-blog-list/user-blog-list.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+//pipes
+import { TagConverterPipe } from './pipes/tag-converter.pipe';
 import { StringShorterPipe } from './pipes/string-shorter.pipe';
-import { DataTablesModule } from 'angular-datatables';
+
 
 // required for AOT compilation
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
@@ -51,6 +59,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     FormsModule,
     FontAwesomeModule,
     DataTablesModule,
+    InfiniteScrollModule,
+    CKEditorModule,
     ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'}),
     NgMultiSelectDropDownModule.forRoot(),
     MomentModule.forRoot({
