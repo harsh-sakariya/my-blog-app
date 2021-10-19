@@ -1,7 +1,7 @@
 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
   <div class="form-group">
     <!-- select username/email -->
-    <label for="selectId">Select Username/Email</label>
+    <label for="selectId">{{"select-username/email" | translate}}</label>
     <select
       id="selectId"
       class="form-control"
@@ -16,7 +16,7 @@
 
   <!-- Username -->
   <div class="form-group" *ngIf="loginType === 'username'">
-    <label>UserName</label>
+    <label>{{"username" | translate}}</label>
     <input
       type="text"
       id="username"
@@ -35,7 +35,7 @@
 
   <!-- Email -->
   <div class="form-group" *ngIf="loginType === 'email'">
-    <label for="email">Email</label>
+    <label for="email">{{ "email" | translate }}</label>
     <input
       type="text"
       id="email"
@@ -53,7 +53,7 @@
 
   <!-- Password -->
   <div class="form-group">
-    <label for="password">Password</label>
+    <label for="password">{{ "password" | translate }}</label>
     <input
       type="password"
       id="password"
@@ -80,9 +80,9 @@
   <!-- password -->
 
   <div class="form-group">
-    <button class="btn btn-success mr-2" type="submit">Login</button>
+    <button class="btn btn-success mr-2" type="submit">{{ "login" | translate }}</button>
     <a style="cursor: pointer" [routerLink]="['/signup']"
-      >Not have any account?</a
+      >{{ "not-have-any-account" | translate }}</a
     >
   </div>
 </form>

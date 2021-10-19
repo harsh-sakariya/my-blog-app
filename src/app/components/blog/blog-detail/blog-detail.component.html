@@ -2,7 +2,7 @@
   <small style="float: right;">Publish Date - {{blog.date | amLocal | amDateFormat: 'YYYY-MM-DD HH:mm'}} - {{blog.date |  amTimeAgo:true}} ago</small>
   <h2>{{blog.title}}</h2>
   <div class="text-center my-2">
-    <img [src]="blog.imageUrl" class="rounded img-fluid" [alt]="blog.title" style="max-width: 448px;">
+    <img [src]="blog.imageUrl" class="rounded img-fluid" [alt]="blog.title" style="max-width: 500px; max-height: 400px;">
   </div>
   <p class="lead">{{blog.description}}</p>
   <hr class="my-4">

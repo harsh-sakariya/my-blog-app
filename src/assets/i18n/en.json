@@ -1,0 +1,16 @@
+{
+  "home": "Home",
+  "post-new-blog": "Write something to make better world",
+  "select-username/email": "Select Username/Email",
+  "username": "Username",
+  "email": "Email",
+  "password": "Password",
+  "login": "Login",
+  "not-have-any-account": "Not have any account?",
+  "full-name": "Full Name",
+  "confirm-password": "Confirm Password",
+  "signup": "Sign Up",
+  "already-have-account": "Already have account?",
+  "my-blogs": "My Blog",
+  "welcome" : "Welcome"
+}

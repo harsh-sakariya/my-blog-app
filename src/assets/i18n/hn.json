@@ -1,0 +1,18 @@
+{
+  "home": "घर",
+  "post-new-blog": "दुनिया को बेहतर बनाने के लिए कुछ लिखें",
+  "select-username/email": "उपयोगकर्ता नाम/ईमेल का चयन करें",
+  "username": "उपयोगकर्ता नाम",
+  "email": "ईमेल",
+  "password": "पासवर्ड",
+  "login": "लॉग इन करें",
+  "not-have-any-account": "कोई खाता नहीं है?",
+  "full-name": "पूरा नाम",
+  "confirm-password": "पासवर्ड की पुष्टि कीजिये",
+  "signup": "साइन अप करें",
+  "already-have-account": "पहले से ही खाता है?",
+  "my-blogs": "मेरे ब्लॉग",
+  "welcome": "आपका स्वागत है"
+
+  
+}
