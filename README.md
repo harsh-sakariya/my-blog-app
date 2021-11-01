@@ -1,6 +1,13 @@
 # MyBlogApp
 
-This Project is about Blogs. In this site we can read blogs and also add new blogs. we can also edit and delete ours blogs. you can read blogs without login but if you want to add new blog then login is required.  
+This Project is about Blogs. In this site we can read blogs and also add new blogs. we can also edit and delete ours blogs. you can read blogs without login but if you want to add new blog then login is required.
+
+In this project I use libraries and plugins like:
+  - CK Editor
+  - Moment js (for date formatting)
+  - DataTables
+  - Font Awesome
+  - ngx-translate
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
 
