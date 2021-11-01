@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { Blog } from '../models/blog.model';
 
 @Injectable({ providedIn: 'root' })
@@ -122,6 +123,7 @@ export class BlogService {
       new Date(2021, 9, 14, 12, 15, 54, 0)
     ),
   ];
+  blogUpdated = new Subject<null>();
 
   getNextIdOfBlog(){
     return this.blogs.length;
@@ -145,6 +147,7 @@ export class BlogService {
 
   editBlog(id: number, updateBlog: Blog){
     this.blogs[id] = updateBlog;
+    this.blogUpdated.next();
   }
 
   deleteBlog(id: number){

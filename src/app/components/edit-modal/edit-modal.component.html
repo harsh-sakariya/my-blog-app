@@ -1,5 +1,10 @@
-<h4>Add New Blog</h4>
-<hr />
+<div class="modal-header">
+  <h4 class="modal-title">Edit Blog</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
 <form #blogForm="ngForm" (ngSubmit)="onSubmit(blogForm)">
   <!-- Title -->
   <div class="form-group">
@@ -15,7 +20,6 @@
   </div>
   <!-- Title -->
 
-
   <div class="row">
     <div class="col-md-6">
       <!-- Description -->
@@ -23,17 +27,6 @@
         <label for="description">Description</label>
         <ckeditor [(ngModel)]="description" [editor]="Editor" id="description" name="description"></ckeditor>
       </div>
-      <!-- <div class="form-group">
-        <label for="description">Description</label>
-        <textarea
-          type="text"
-          id="description"
-          class="form-control"
-          name="description"
-          [(ngModel)]="description"
-          required
-        ></textarea>
-      </div> -->
       <!-- Description -->
 
       <!-- Image URL -->
@@ -80,26 +73,22 @@
       </div>
       <!-- Author -->
 
-      <!-- DatePicker -->
-      <div class="form-group">
-        <div class="input-group">
-          <input class="form-control" placeholder="yyyy-mm-dd" name="date" [(ngModel)]="date" ngbDatepicker #d="ngbDatepicker">
-          <div class="input-group-append">
-            <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"><fa-icon [icon]="faCalendar"></fa-icon></button>
-          </div>
-        </div>
-      </div>
-      <!-- DatePicker -->
-
     </div>
     <div class="col-md-6">
       <img [src]="imageUrl" alt="" style="max-width: 500px; max-height: 400px;">
     </div>
   </div>
 
+  <!-- Update Button -->
   <div class="form-group">
     <button class="btn btn-success" type="submit" [disabled]="!blogForm.valid">
-      Publish
+      Update
     </button>
   </div>
+  <!-- Update Button -->
 </form>
+
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+</div>

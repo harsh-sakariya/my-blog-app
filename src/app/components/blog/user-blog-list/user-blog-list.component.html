@@ -10,12 +10,12 @@
     </tr>
   </thead>
   <tbody *ngIf="userBlogs?.length != 0">
-    <tr style="cursor: pointer;" *ngFor="let userBlog of userBlogs; let i=index" (click)="onViewDetails(userBlog.id)">
-      <td>{{i+1}}</td>
-      <td><img class="card-img-top" style="width: 60px;" [src]="userBlog.imageUrl" [alt]="userBlog.title"></td>
-      <td>{{userBlog.title | stringShorter:15 }}</td>
+    <tr style="cursor: pointer;" *ngFor="let userBlog of userBlogs; let i=index" >
+      <td (click)="onViewDetails(userBlog.id)">{{i+1}}</td>
+      <td (click)="onViewDetails(userBlog.id)"><img class="card-img-top" style="width: 60px;" [src]="userBlog.imageUrl" [alt]="userBlog.title"></td>
+      <td (click)="onViewDetails(userBlog.id)">{{userBlog.title | stringShorter:15 }}</td>
       <!-- <td>{{userBlog.description | stringShorter:100}}</td> -->
-      <td>
+      <td (click)="onViewDetails(userBlog.id)">
         <p 
           [innerHTML]="userBlog.description" 
           style="max-width: 386px; max-height: 80px; overflow: auto; margin-bottom: 0;">

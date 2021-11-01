@@ -19,7 +19,6 @@ export class AuthService{
     }
     this.currentUserId = Math.floor(Math.random() * (999999999 - 100000000)) + 100000000; 
     this.userLoggedIn.next(this.currentUsernameOrEmail);
-    console.log(user);
   }
 
   getAuthStatus(): boolean {

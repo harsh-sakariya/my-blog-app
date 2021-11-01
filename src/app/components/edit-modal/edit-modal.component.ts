@@ -1,39 +1,36 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import { NgForm } from '@angular/forms';
-import { faCalendar } from '@fortawesome/free-solid-svg-icons';
 import { IDropdownSettings } from 'ng-multiselect-dropdown';
 
-import { BlogService } from 'src/app/services/blog.service';
+import { Blog } from 'src/app/models/blog.model';
+import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
-import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+import { BlogService } from 'src/app/services/blog.service';
 
 @Component({
-  selector: 'app-add-blog',
-  templateUrl: './add-blog.component.html',
-  styleUrls: ['./add-blog.component.css'],
+  selector: 'app-edit-modal',
+  templateUrl: './edit-modal.component.html',
+  styleUrls: ['./edit-modal.component.css'],
 })
-export class AddBlogComponent implements OnInit {
-  @ViewChild('blogForm') blogForm: NgForm;
-  faCalendar = faCalendar;
-
+export class EditModalComponent implements OnInit {
   dropdownList = [];
-  selectedTags = [];
+  @Input() selectedTags = [];
   dropdownSettings: IDropdownSettings = {};
+  @Input() blog: Blog;
   id: number;
   title: string;
   description: string = '';
   imageUrl: string;
   author: string;
-  date: NgbDateStruct;
-
+  date: Date;
+  subscription: Subscription;
   public Editor = ClassicEditor;
 
   constructor(
-    private blogService: BlogService,
-    private router: Router,
-    private authService: AuthService
+    public activeModal: NgbActiveModal,
+    private authService: AuthService,
+    private blogService: BlogService
   ) {}
 
   ngOnInit(): void {
@@ -60,17 +57,25 @@ export class AddBlogComponent implements OnInit {
       allowSearchFilter: true,
     };
 
+    if(this.blog){
+      this.id = this.blog.id;
+      this.title = this.blog.title;
+      this.description = this.blog.description;
+      this.imageUrl = this.blog.imageUrl;
+      this.author = this.blog.author;
+      this.date = this.blog.date;
+      this.selectedTags = this.blog.tags;
+    }
+
     this.author = this.authService.getCurrentUsername();
   }
 
-  onSubmit(blogForm) {
-    console.log(blogForm.value);
-    this.blogService.addBlog({
-      ...blogForm.value,
-      id: this.blogService.getNextIdOfBlog(),
-      date: new Date(blogForm.value.date.year, blogForm.value.date.month, blogForm.value.date.day),
-      publishBy: this.authService.currentUserId,
-    });
-    this.router.navigate(['blog']);
+  onSubmit(blogForm){
+    if(this.blog){
+      this.blogService.editBlog(this.id, {...blogForm.value, id: this.id ,date: this.date, publishBy: this.authService.currentUserId});
+      this.id = null;
+      this.blog = null;
+      this.activeModal.close();
+    }
   }
 }

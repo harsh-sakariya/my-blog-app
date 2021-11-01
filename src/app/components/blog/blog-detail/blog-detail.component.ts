@@ -21,6 +21,9 @@ export class BlogDetailComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
       this.id = +params['id'];
+      if(!this.blogService.getBlog(this.id)){
+        this.router.navigate(['page-not-found']);
+      }
       this.blog = this.blogService.getBlog(this.id);
     });
   }

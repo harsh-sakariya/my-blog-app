@@ -31,6 +31,8 @@ import { UserBlogList } from './components/blog/user-blog-list/user-blog-list.co
 //pipes
 import { TagConverterPipe } from './pipes/tag-converter.pipe';
 import { StringShorterPipe } from './pipes/string-shorter.pipe';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { EditModalComponent } from './components/edit-modal/edit-modal.component';
 
 
 // required for AOT compilation
@@ -51,7 +53,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     SignUpComponent,
     UserBlogList,
     TagConverterPipe,
-    StringShorterPipe
+    StringShorterPipe,
+    EditModalComponent
   ],
   imports: [
     BrowserModule,
@@ -75,7 +78,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
             useFactory: HttpLoaderFactory,
             deps: [HttpClient]
         }
-    })
+    }),
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
