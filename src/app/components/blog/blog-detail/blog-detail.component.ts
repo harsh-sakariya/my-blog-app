@@ -21,27 +21,33 @@ export class BlogDetailComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
       this.id = +params['id'];
-      if(!this.blogService.getBlog(this.id)){
+      if(!this.blogService.getBlogById(this.id)){
         this.router.navigate(['page-not-found']);
       }
-      this.blog = this.blogService.getBlog(this.id);
+      this.blog = this.blogService.getBlogById(this.id);
     });
   }
 
   onPrevious() {
-    if(this.id === 0){
+    const previousId = this.blogService.previousAvailableBlogId(this.id);
+    if(previousId){
+      this.router.navigate(['../',previousId], {relativeTo: this.route});
+    }
+    else{
       alert("No more blogs are available!");
       return;
     }
-    this.router.navigate(['../',this.id-1], {relativeTo: this.route});
   }
 
   onNext() {
-    if(this.id === this.blogService.getNumberOfBlogs()-1){
+    const nextId = this.blogService.nextAvailableBlogId(this.id);
+    if(nextId){
+      this.router.navigate(['../',nextId], {relativeTo: this.route});
+    }
+    else{
       alert("No more blogs are available!");
       return;
     }
-    this.router.navigate(['../',this.id+1], {relativeTo: this.route});
   }
 
 }

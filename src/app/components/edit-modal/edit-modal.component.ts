@@ -72,7 +72,7 @@ export class EditModalComponent implements OnInit {
 
   onSubmit(blogForm){
     if(this.blog){
-      this.blogService.editBlog(this.id, {...blogForm.value, id: this.id ,date: this.date, publishBy: this.authService.currentUserId});
+      this.blogService.editBlog(this.blog.id, {...blogForm.value, id: this.id ,date: this.date, publishBy: this.authService.currentUserId});
       this.id = null;
       this.blog = null;
       this.activeModal.close();

@@ -34,7 +34,7 @@ export class UserBlogList implements OnInit {
 
   onEdit(blogId: number) {
     const loginModal = this.modalService.open(EditModalComponent, { size: 'xl', scrollable: true });
-    loginModal.componentInstance.blog = this.blogService.getBlog(blogId);
+    loginModal.componentInstance.blog = this.blogService.getBlogById(blogId);
     // this.router.navigate(['../', blogId, 'edit'], {relativeTo: this.route});
   }
 

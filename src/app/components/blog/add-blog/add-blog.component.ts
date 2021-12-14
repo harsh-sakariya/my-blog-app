@@ -67,7 +67,7 @@ export class AddBlogComponent implements OnInit {
     console.log(blogForm.value);
     this.blogService.addBlog({
       ...blogForm.value,
-      id: this.blogService.getNextIdOfBlog(),
+      id: this.blogService.generateRandomId(),
       date: new Date(blogForm.value.date.year, blogForm.value.date.month, blogForm.value.date.day),
       publishBy: this.authService.currentUserId,
     });
