@@ -38,6 +38,7 @@ export class LoginComponent implements OnInit {
     this.submitted = true;
     if(!this.loginForm.valid){
       alert("invalid credentials!!");
+      return;
     }
     this.authService.login(this.loginForm.value);
     this.router.navigate(['blog']);
